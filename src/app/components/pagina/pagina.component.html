@@ -1,0 +1,53 @@
+<h1 class="subheader">pagina 1</h1>
+
+<div *ngIf="nombre && apellido">
+    <h2 class="subheader">el nombre es : {{nombre}}</h2>
+    <h2 class="subheader">el apellido es : {{apellido}}</h2>
+</div>
+
+<button (click)="redireccion()">redirecciona</button>
+
+
+<div *ngIf="!nombre || !apellido">
+    <h2 class="subheader">eno hay parametros por url o no estan completos</h2>
+    
+</div>
+
+<hr/>
+<h2 class="subheader">mostrar peliculas</h2>
+{{peliculas[0].title}}
+
+<h2>nuero de peligulas</h2>
+<div *ngIf="peliculas.length<=3">
+    <p>hay pocas peliculas</p>
+</div>
+<div *ngIf="peliculas.length>3">
+    <p>hay muchas peliculas</p>
+</div>
+
+{{peliculas.length}}
+
+<div >
+
+</div>
+
+<div id="articles" *ngIf="peliculas">
+    <article class="article-item" *ngFor="let pelicula of peliculas; let i = index">
+        <div class="image-wrap">
+            <img src="{{pelicula.imagen}}" alt="{{pelicula.title}}" />
+        </div>
+
+        <h2>{{i}}.- {{pelicula.title}}</h2>
+        <span class="date">
+            Hace 5 minutos
+        </span>
+        <a href="#">Leer más</a>
+
+        <div class="clearfix"></div>
+    </article>
+
+    <!--AÑADIR ARTICULOS VIA JS-->
+
+</div>
+
+
